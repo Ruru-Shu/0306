@@ -1,0 +1,17 @@
+body{
+	font-size: 20px;
+}
+a{
+	text-decoration: line-through;
+}
+#main_paragrap{
+	border: 3px violet solid;
+	color: #4fa;
+	padding: 20px;
+	margin: 20px;
+}
+.tt{
+	font-size: 30px;
+	color: #444;
+	font-weight: bold;
+}
