@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../style.css">
+	<style type="text/css" media="screen">
+		body{
+			background-color: #ccc;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-wrap: wrap;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cv" width="800" height="550"></canvas><div style="flex-basis: 100%;"></div>
+	<button class="btn btn-4" style="padding: 10px 50px;" onclick="run()">Run</button>
+	<script>
+		var c = document.getElementById('cv');
+		var ctx = c.getContext('2d');
+		var timer_code;
+		var x = 100;
+		var back = 0;
+
+		ctx.fillStyle = "#fff";
+		ctx.fillRect(0, 0, c.width, c.height);
+
+		ctx.beginPath();
+		ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+		ctx.stroke();
+
+		function run()
+		{
+			x = 100;
+			back = 0;
+			cancelAnimationFrame(timer_code);
+			timer_code = requestAnimationFrame(run2);
+		}
+
+		function run2()
+		{
+			ctx.fillRect(0, 0, c.width, c.height);
+			ctx.beginPath();
+			ctx.arc(x, c.height - 100 - Math.pow( x - c.width / 2,2)/160000*(c.height - 100), 50, 0, 2 * Math.PI);
+			ctx.stroke();
+			if (x > 700) back = 1;
+			if (back == 1) 
+			{
+				x -= 3;
+				if (x < 100) back = 0;
+			} 
+			else 
+			{
+				x += 3;
+			}
+
+			requestAnimationFrame(run2);
+		}
+	</script>
+</body>
+</html>

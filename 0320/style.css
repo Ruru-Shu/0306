@@ -1,0 +1,48 @@
+html, body{
+	font-size: 18px;
+	height: 100%;
+}
+*{
+	user-select: none;
+}
+.main>*{
+	vertical-align: middle;
+}
+.btn-group{
+	display: inline-block;
+}
+.main .btn{
+	display: block;
+}
+.btn{
+	margin: 10px;
+	padding: 10px 30px;
+	border: 0;
+	border-radius: 10px;
+	outline: 0;
+	cursor: pointer;
+}
+.btn:hover{
+	filter: brightness(0.8);
+}
+.btn-1{
+	background-color: violet;
+	color: white;
+}
+.btn-2{
+	background-color: aquamarine;
+	color: white;
+}
+.btn-3{
+	background-color: coral;
+	color: white;
+}
+.btn-4{
+	background-color: burlywood;
+	color: white;
+}
+input[type="text"], input[type="number"]{
+	width: 100px;
+	font-size: 1em;
+	outline: 0;
+}

@@ -1,0 +1,50 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+header{
+	background-color: #000;
+	color: #fff;
+	font-weight: bold;
+	font-size: 1.5em;
+	padding: 50px;
+	text-align: center;
+}
+nav{
+	background-color: #33a0ff;
+	float: left;
+	height: 300px;
+	width: 30%;
+}
+li{
+	margin: 20px;
+}
+section{
+	background-color: #9cee82;
+	height: 300px;
+	width: 70%;
+	text-align: center;
+	float: left;
+}
+p{
+	padding: 20px;
+	line-height: 1.5em;
+}
+footer{
+	background-color: #000;
+	color: #fff;
+	font-size: 28px;
+	padding: 20px;
+	text-align: center;
+	clear: both;
+}
+
+@media screen and (max-width: 768px) {
+	body{
+		font-size: 30px;
+	}
+	nav, section{
+		width: 100%;
+		height: auto;
+	}
+}

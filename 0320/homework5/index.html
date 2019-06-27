@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../style.css">
+	<style type="text/css" media="screen">
+		body{
+			background-color: #ccc;
+			display: flex;
+			justify-content: center;
+			align-content: center;
+			flex-wrap: wrap;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="cv" width="800" height="500"></canvas><div style="flex-basis: 100%;"></div>
+	<div style="text-align: center;">
+		<input type="number" id="num" value="50">
+		<button class="btn btn-4" style="padding: 10px 50px;" onclick="run()">Run</button>
+	</div>
+	<script>
+		var c = document.getElementById('cv');
+		var ctx = c.getContext('2d');
+		var timer_code;
+		var val = 50;
+		var val2 = 0;
+		var val3 = 0;
+
+		ctx.font = "35px Arial";
+		drawRect(val);
+
+		function run()
+		{
+			var i = 1, n = 50;
+			val2 = parseInt(document.getElementById('num').value);
+			val2 = (val2 > 100) ? 100 : val2;
+			val2 = (val2 < 0) ? 0 : val2;
+
+			val3 = (val2 - val) / n;
+			timer_code = setInterval(()=>{
+				val += val3;
+				if (i >= n)
+				{
+					clearInterval(timer_code);
+				}
+				i++;
+				
+				drawRect(val);
+			}, 50);
+		}
+
+		function drawRect(val)
+		{
+			ctx.fillStyle = "#fff";
+			ctx.fillRect(0, 0, c.width, c.height);
+
+			ctx.fillStyle = "rgb(" + (Math.random() * 255) + "," + (Math.random() * 255) + "," + (Math.random() * 255) + ")";
+			ctx.fillRect(350, 500 - (val / 100 * 500), 100, 500);
+
+			ctx.fillText(val, 250, 250);
+		}
+	</script>
+</body>
+</html>
